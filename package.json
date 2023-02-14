@@ -1,0 +1,31 @@
+{
+  "name": "compress-image",
+  "version": "1.0.0",
+  "description": "This is tool useed to compress image",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gongwlin/compress-image.git"
+  },
+  "keywords": [
+    "compress",
+    "image",
+    "tinypng"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gongwlin/compress-image/issues"
+  },
+  "homepage": "https://github.com/gongwlin/compress-image#readme",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "simple-git": "^3.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0"
+  }
+}
