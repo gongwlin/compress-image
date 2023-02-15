@@ -2,9 +2,12 @@
   "name": "compress-image",
   "version": "1.0.0",
   "description": "This is tool useed to compress image",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "compress-image": "./index.js"
   },
   "repository": {
     "type": "git",

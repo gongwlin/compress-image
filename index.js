@@ -51,8 +51,6 @@ async function getStatus() {
 			}
       const git = simpleGit();
       const wholeRepoStatus = await git.status();
-      console.log("list", wholeRepoStatus.not_added);
-
       const fileList = wholeRepoStatus.not_added.filter(v => {
         const reg = new RegExp(config.dir, 'i');
         return reg.test(v);
@@ -173,10 +171,11 @@ function fileUpdate(imgpath, obj) {
         const inputSize = input.size;
         const outputSize = output.size;
 
+        const beforeCompressSize = inputSize > 1024 ? `${Math.ceil(inputSize / 1024)}K` : `${inputSize}Byte`;
+        const afterCompressSize = outputSize > 1024 ? `${Math.ceil(outputSize / 1024)}K` : `${outputSize}Byte`;
         console.log(
-          `${imgpath} \n 压缩成功，原始大小: ${Math.ceil(inputSize / 1024)}K，压缩后大小: ${
-            Math.ceil(outputSize / 1024)
-          }K，优化比例: ${((inputSize - outputSize) / inputSize * 100).toFixed(1)}%\n`
+          `${imgpath} \n 压缩成功，原始大小: ${beforeCompressSize}，压缩后大小: ${
+            afterCompressSize}，优化比例: ${((inputSize - outputSize) / inputSize * 100).toFixed(1)}%\n`
         );
       });
     });
